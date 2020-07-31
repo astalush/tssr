@@ -231,6 +231,8 @@ echo -e "$Green \n SUCCESS! Votre MDP root pour MySQL password est: ${DATABASE_P
 
 #chercher l'addresse IP du serveur GLPI
 IPAD=`ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p'`
+
+#affichage des infos pour le serveur GLPI
 echo ""
 echo "---------------------------------------------------------------------------------------------------"
 echo -e "$Red \n L'adresse IP du GLPI: http://$IPAD/ ${Color_Off}"
@@ -246,6 +248,7 @@ echo ""
 echo -e "$Red \n Merci d'attendre 15 seconds SVP... ${Color_Off}"
 
 sleep 15
+#affichage des infos supplementaires et appelle de la fonction presskey
 echo -e "$Red \n Pour des raisons de securité le fichier install.php de GLPI sera effacé a la fin de ce script. ${Color_Off}"
 echo -e "$Red \n Merci de bien parametrer GLPI jusqu'a la FIN avant de valider en appuyant sur n'importe quelle touche .. ${Color_Off}"
 presskey_check
