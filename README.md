@@ -1,1 +1,1 @@
-Un script d'installation du GLPI sur un Debian 10 Buster.
+Un script d'installation GLPI sur un Debian 10 Buster.
