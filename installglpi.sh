@@ -139,7 +139,7 @@ echo ""
 mysqladmin -u root password $DATABASE_PASS
 
 # mysql_secure_installation.sql
-echo -e "\n ${Red} Sécurisation du serveur MySQL ${Color_Off}"
+echo -e "$Red \n Sécurisation du serveur MySQL ${Color_Off}"
 sleep 3
 mysql -uroot -p${DATABASE_PASS} -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
 mysql -uroot -p${DATABASE_PASS} -e "DELETE FROM mysql.user WHERE User='';"
