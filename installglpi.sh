@@ -110,12 +110,12 @@ sudo apt update
 sudo apt upgrade -y
 
 #installation apache
-echo -e "$Cyan \n Installation de apache2 $Color_Off"
+echo -e "$Cyan \n Installation apache2 $Color_Off"
 sleep 3
 sudo apt install apache2 apache2-doc apache2-utils libexpat1 ssl-cert -y
 
 #installation PHP
-echo -e "$Yellow \n Installation de PHP $Color_Off"
+echo -e "$Yellow \n Installation PHP $Color_Off"
 sleep 3
 apt install curl net-tools php7.3 php7.3-curl php7.3-zip php7.3-gd php7.3-intl php-pear php-imagick php7.3-imap php-memcache php7.3-pspell php7.3-recode php7.3-tidy php7.3-xmlrpc php7.3-xsl php7.3-mbstring php-gettext php7.3-ldap php-cas php-apcu libapache2-mod-php7.3 php7.3-mysql libbz2-dev php7.3-bz2 -y
 
@@ -125,7 +125,7 @@ sleep 3
 sudo systemctl restart apache2 &> /dev/null
 
 #installation mariaBD
-echo -e "$Green \n Installation de MariaDB $Color_Off"
+echo -e "$Green \n Installation MariaDB $Color_Off"
 apt-get install mariadb-server mariadb-client -y
 sleep 3
 
