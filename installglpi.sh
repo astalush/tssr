@@ -4,19 +4,7 @@
 # Power to the people!!!
 sleep 2
 clear
-echo "8888888                   888             888 888          888    d8b                         .d8888b.  888      8888888b. 8888888 ";
-echo "  888                     888             888 888          888    Y8P                        d88P  Y88b 888      888   Y88b  888   ";
-echo "  888                     888             888 888          888                               888    888 888      888    888  888   ";
-echo "  888   88888b.  .d8888b  888888  8888b.  888 888  8888b.  888888 888  .d88b.  88888b.       888        888      888   d88P  888   ";
-echo "  888   888 \"88b 88K      888        \"88b 888 888     \"88b 888    888 d88\"\"88b 888 \"88b      888  88888 888      8888888P\"   888   ";
-echo "  888   888  888 \"Y8888b. 888    .d888888 888 888 .d888888 888    888 888  888 888  888      888    888 888      888         888   ";
-echo "  888   888  888      X88 Y88b.  888  888 888 888 888  888 Y88b.  888 Y88..88P 888  888      Y88b  d88P 888      888         888   ";
-echo "8888888 888  888  88888P'  \"Y888 \"Y888888 888 888 \"Y888888  \"Y888 888  \"Y88P\"  888  888       \"Y8888P88 88888888 888       8888888 ";
-echo "                                                                                                                                   ";
-echo "                                                                                                                                   ";
-echo "                                                                                                                                   ";
 
-sleep 5
 # Color Reset
 Color_Off='\033[0m'       # Reset
 
@@ -29,22 +17,6 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 
 #Les fonctions
-
-#fonction pour afficher la fin du script
-tssr2020 () {
-echo "88888888888 .d8888b.   .d8888b.  8888888b.        .d8888b.   .d8888b.   .d8888b.   .d8888b.  ";
-echo "    888    d88P  Y88b d88P  Y88b 888   Y88b      d88P  Y88b d88P  Y88b d88P  Y88b d88P  Y88b ";
-echo "    888    Y88b.      Y88b.      888    888             888 888    888        888 888    888 ";
-echo "    888     \"Y888b.    \"Y888b.   888   d88P           .d88P 888    888      .d88P 888    888 ";
-echo "    888        \"Y88b.     \"Y88b. 8888888P\"        .od888P\"  888    888  .od888P\"  888    888 ";
-echo "    888          \"888       \"888 888 T88b        d88P\"      888    888 d88P\"      888    888 ";
-echo "    888    Y88b  d88P Y88b  d88P 888  T88b       888\"       Y88b  d88P 888\"       Y88b  d88P ";
-echo "    888     \"Y8888P\"   \"Y8888P\"  888   T88b      888888888   \"Y8888P\"  888888888   \"Y8888P\"  ";
-echo "                                                                                             ";
-echo "                                                                                             ";
-echo "                                                                                             ";
-}
-
 
 #fonction pour double verification du MDP root MYSQL
 password_check_mysql () {
@@ -257,7 +229,3 @@ echo -e "$Cyan \n| Utilisateur SQL:${Color_Off} ${username} |"
 echo -e "$Cyan \n| Mot de passe SQL:${Color_Off} ${userpass} ${Color_Off}|"
 echo "---------------------------------------------------------------------------------------------------"
 echo ""
-sleep 3
-
-#appel de la fonctions tssr2020 affichage
-tssr2020
