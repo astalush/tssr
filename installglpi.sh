@@ -131,7 +131,8 @@ mysql -uroot -p${DATABASE_PASS} -e "FLUSH PRIVILEGES;"
 #telecharger la derniere version du glpi depuis github
 echo -e "$Cyan \nTelechargement de la dernier version de GLPI... $Color_Off"
 cd /tmp
-wget https:$(wget https://github.com/glpi-project/glpi/releases/latest.tgz -O - | egrep '/.*/.*/.*tgz' -o)
+#wget https:$(wget https://github.com/glpi-project/glpi/releases/latest.tgz -O - | egrep '/.*/.*/.*tgz' -o)
+wget https://github.com/glpi-project/glpi/releases/download/9.4.1.1/glpi-9.4.1.1.tgz
 sleep 3
 
 #dezarchiver glpi
