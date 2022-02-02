@@ -1,0 +1,9 @@
+[Unit]
+Description=Run service every day at xxx hour
+Requires=backup_system.service
+[Timer]
+Unit=backup_system.service
+OnCalendar=Tue *-*-* 6:00:00
+AccuracySec=1s
+[Install]
+WantedBy=timers.target
