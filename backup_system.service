@@ -1,0 +1,20 @@
+[Unit]
+Description=uploads backup of system into gdrive
+Wants=backup_system.timer
+[Service]
+User=astalush
+Group=astalush
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/rclone copy \
+  --ignore-existing \
+  --exclude 'old.backups/**' \
+  -Pv \
+  --transfers 4 \
+  --checkers 8 \
+  --log-file=/home/astalush/logs/rclone_backup_system.log \
+  --drive-chunk-size 256M \
+  --bwlimit 30M \
+  --max-transfer 700G \
+  --stats 5s \
+/mnt/backup/ \
+google:Backups/
