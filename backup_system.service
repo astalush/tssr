@@ -18,3 +18,7 @@ ExecStart=/usr/bin/rclone copy \
   --stats 5s \
 /mnt/backup/ \
 google:Backups/
+
+Slice=backup_rclone.slice
+[Install]
+WantedBy=multi-user.target
