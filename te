@@ -1,0 +1,64 @@
+  teslamate:
+    image: ghcr.io/teslamate-org/teslamate:pr-3630
+    container_name: TeslaMate
+    restart: on-failure:5
+    environment:
+      - ENCRYPTION_KEY=achanger
+      - DATABASE_USER=usernamef
+      - DATABASE_PASS=achanger
+      - DATABASE_NAME=teslamate
+      - DATABASE_HOST=database
+      - MQTT_HOST=mosquitto
+    ports:
+      - 20002:4000
+    cap_drop:
+      - all
+
+  database:
+    image: postgres:14
+    container_name: TeslaMate-DB
+    restart: on-failure:5
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - POSTGRES_USER=usernamef
+      - POSTGRES_PASSWORD=achanger
+      - POSTGRES_DB=teslamate
+    volumes:
+      - /opt/teslamate/db:/var/lib/postgresql/data:rw
+
+  grafanatesla:
+    image: teslamate/grafana:latest
+    container_name: TeslaMate-GRAFANA
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - VIRTUAL_HOST=teslamate.atfinch.com
+      - HTTP_PORT=20003
+      - LETSENCRYPT_HOST=teslamate.atfinch.com
+      - GF_SECURITY_ADMIN_PASSWORD=achanger
+      - GF_SERVER_ROOT_URL=https://teslamate.atfinch.com
+      - DATABASE_USER=usernamef
+      - DATABASE_PASS=achanger
+      - DATABASE_NAME=teslamate
+      - DATABASE_HOST=database
+    ports:
+      - 20003:3000
+    volumes:
+      - /opt/teslamate/datagrafana:/var/lib/grafana:rw
+      - /etc/localtime:/etc/localtime:ro
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: TeslaMate-MOSQUITTO
+    restart: always
+    command: mosquitto -c /mosquitto-no-auth.conf
+    # ports:
+    #   - 1883:1883
+    volumes:
+      - /opt/teslamate/mosqconf:/mosquitto/config:rw
+      - /opt/teslamate/mosqdata:/mosquitto/data:rw
+      - /opt/teslamate/mosqlogs:/mosquitto/log:rw
